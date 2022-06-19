@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ScrollScreen extends StatelessWidget {
+  final boxDecoration = const BoxDecoration(
+      gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+          stops: [0.5, 0.5],
+          colors: [Color(0xff5EE8C5), Color(0xff30BAD6)]));
+
   @override
   Widget build(BuildContext context) {
-    const boxDecoration = BoxDecoration(
-        gradient: LinearGradient(
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
-            stops: [0.5, 0.5],
-            colors: [Color(0xff5EE8C5), Color(0xff30BAD6)]));
     return Scaffold(
         body: Container(
       decoration: boxDecoration,
@@ -87,7 +88,7 @@ class Page2 extends StatelessWidget {
         child: TextButton(
             style: TextButton.styleFrom(
                 backgroundColor: const Color(0xff0098FA),
-                shape: StadiumBorder()),
+                shape: const StadiumBorder()),
             onPressed: () {},
             child: const Padding(
               padding: EdgeInsets.symmetric(horizontal: 40),

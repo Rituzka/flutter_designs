@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_designs/screens/scroll_design.dart';
+import 'package:flutter_designs/widgets/background.dart';
 
 class HomeScreen extends StatelessWidget {
   @override
