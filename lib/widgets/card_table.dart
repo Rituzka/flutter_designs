@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class CardTable extends StatelessWidget {
@@ -49,6 +51,17 @@ class CardTable extends StatelessWidget {
             text: 'Sport',
           ),
         ]),
+        TableRow(children: [
+          _SingleCard(
+              icon: Icons.window_outlined,
+              color: Color.fromRGBO(62, 66, 107, 0.7),
+              text: 'General'),
+          _SingleCard(
+            color: Color.fromARGB(176, 200, 42, 182),
+            icon: Icons.train_outlined,
+            text: 'Transport',
+          ),
+        ]),
       ],
     );
   }
@@ -65,12 +78,7 @@ class _SingleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      margin: EdgeInsets.all(15),
-      height: 180,
-      decoration: BoxDecoration(
-          color: Color.fromRGBO(62, 66, 107, 0.7),
-          borderRadius: BorderRadius.circular(20)),
+    return _SingleCardBackground(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -89,6 +97,33 @@ class _SingleCard extends StatelessWidget {
             style: TextStyle(color: color, fontSize: 18),
           )
         ],
+      ),
+    );
+  }
+}
+
+class _SingleCardBackground extends StatelessWidget {
+  final Widget child;
+
+  const _SingleCardBackground({Key? key, required this.child})
+      : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.all(15),
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: BackdropFilter(
+          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+          child: Container(
+            height: 180,
+            decoration: BoxDecoration(
+                color: const Color.fromRGBO(62, 66, 107, 0.7),
+                borderRadius: BorderRadius.circular(20)),
+            child: child,
+          ),
+        ),
       ),
     );
   }

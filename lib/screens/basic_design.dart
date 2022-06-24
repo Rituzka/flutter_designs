@@ -6,21 +6,23 @@ class BasicDesignScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        //Image
-        const Image(image: AssetImage('assets/paisaje.jpg')),
-        //Title
-        const Title(),
-        //Button section
-        const ButtonSection(),
-        //Description
-        Container(
-          margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
-          child: const Text(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat augue ut feugiat consequat. Sed tempus et eros ac blandit. Nulla mi lectus, laoreet vel dolor non, efficitur porta tellus. Ut pharetra sit amet mauris nec mollis. Sed non sapien eu felis sollicitudin sodales. Duis blandit eleifend nibh at tincidunt. Proin tempor, nisl non pharetra finibus, risus lectus dapibus tellus, vitae congue nunc magna nec purus. Nulla malesuada, libero quis porttitor condimentum, magna nibh posuere magna, in tincidunt ex sapien et felis. In aliquet, massa id ullamcorper placerat, lacus metus feugiat turpis, lobortis laoreet sapien massa fermentum odio. Nam accumsan, quam eget porta pulvinar, urna eros ultricies magna, at ullamcorper massa mauris at metus. Donec a massa orci.'),
-        )
-      ],
+        body: SingleChildScrollView(
+      child: Column(
+        children: [
+          //Image
+          const Image(image: AssetImage('assets/paisaje.jpg')),
+          //Title
+          const Title(),
+          //Button section
+          const ButtonSection(),
+          //Description
+          Container(
+            margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+            child: const Text(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed feugiat augue ut feugiat consequat. Sed tempus et eros ac blandit. Nulla mi lectus, laoreet vel dolor non, efficitur porta tellus. Ut pharetra sit amet mauris nec mollis. Sed non sapien eu felis sollicitudin sodales. Duis blandit eleifend nibh at tincidunt. Proin tempor, nisl non pharetra finibus, risus lectus dapibus tellus, vitae congue nunc magna nec purus. Nulla malesuada, libero quis porttitor condimentum, magna nibh posuere magna, in tincidunt ex sapien et felis. In aliquet, massa id ullamcorper placerat, lacus metus feugiat turpis, lobortis laoreet sapien massa fermentum odio. Nam accumsan, quam eget porta pulvinar, urna eros ultricies magna, at ullamcorper massa mauris at metus. Donec a massa orci.'),
+          )
+        ],
+      ),
     ));
   }
 }
